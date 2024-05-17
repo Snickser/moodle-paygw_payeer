@@ -39,16 +39,16 @@ $orderid        = required_param('m_orderid', PARAM_INT);
 $signature      = required_param('m_sign', PARAM_TEXT);
 
 $arhash = [
-$_POST['m_operation_id'],
-$_POST['m_operation_ps'],
-$_POST['m_operation_date'],
-$_POST['m_operation_pay_date'],
-$_POST['m_shop'],
-$orderid,
-$amount,
-$currency,
-$_POST['m_desc'],
-$status,
+    $_POST['m_operation_id'],
+    $_POST['m_operation_ps'],
+    $_POST['m_operation_date'],
+    $_POST['m_operation_pay_date'],
+    $_POST['m_shop'],
+    $orderid,
+    $amount,
+    $currency,
+    $_POST['m_desc'],
+    $status,
 ];
 
 if ($status !== 'success') {

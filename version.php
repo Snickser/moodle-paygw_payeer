@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024051700;
+$plugin->version   = 2024051701;
 $plugin->requires  = 2023100900;
 $plugin->component = 'paygw_payeer';
-$plugin->release   = '0.1';
+$plugin->release   = '0.2';
 $plugin->maturity  = MATURITY_STABLE;

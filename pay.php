@@ -157,29 +157,28 @@ $paygwdata->paymentid = $paymentid;
 $DB->update_record('paygw_payeer', $paygwdata);
 
 // Make payment request.
-$murl = 'https://payeer.com/merchant/';
-$mshop = $config->shopid;
-$morderid = $paymentid;
-$mamount = number_format($cost, 2, '.', '');
-$mcurr = $currency == 'RUR' ? 'RUB' : $currency;
-$mdesc = base64_encode($description);
-$mkey = $config->apikey;
+$url = 'https://payeer.com/merchant/';
+$shop = $config->shopid;
+$amount = number_format($cost, 2, '.', '');
+$currency = $currency == 'RUR' ? 'RUB' : $currency;
+$desc = base64_encode($description);
+$key = $config->apikey;
 
 $arhash = [
-    $mshop,
-    $morderid,
-    $mamount,
-    $mcurr,
-    $mdesc,
-    $mkey,
+    $shop,
+    $paymentid,
+    $amount,
+    $currency,
+    $desc,
+    $key,
 ];
 $sign = strtoupper(hash('sha256', implode(":", $arhash)));
 
-redirect($murl . "?
-mshop={$mshop}&
-morderid={$morderid}&
-mamount={$mamount}&
-mcurr={$mcurr}&
-mdesc={$mdesc}&
+redirect($url . "?
+m_shop={$shop}&
+m_orderid={$paymentid}&
+m_amount={$amount}&
+m_curr={$currency}&
+m_desc={$desc}&
 m_sign={$sign}
 ");

@@ -6,7 +6,7 @@ Version 0.1
 
 https://payeer.com
 
-![alt text](https://raw.githubusercontent.com/Snickser/moodle-paygw_payeer/pix/img.svg)
+![alt text](https://github.com/Snickser/moodle-paygw_payeer/blob/main/pix/img.svg)
 
 ## Status
 
